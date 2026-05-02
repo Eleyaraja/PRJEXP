@@ -118,7 +118,7 @@ export default function ExpenseTable({ userId, filters, onExpenseAdded, refreshK
                     </td>
                     <td className="py-3 px-4 text-muted-foreground text-sm">{expense.accounts?.name}</td>
                     <td className="py-3 px-4 text-right font-semibold text-red-400">
-                      ${parseFloat(expense.amount).toFixed(2)}
+                      ?{parseFloat(expense.amount).toFixed(2)}
                     </td>
                     <td className="py-3 px-4 text-right">
                       <div className="flex items-center justify-end gap-2">

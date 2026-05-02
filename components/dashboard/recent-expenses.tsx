@@ -64,7 +64,7 @@ export default function RecentExpenses({ userId }: RecentExpensesProps) {
                   </Badge>
                 </div>
                 <div className="text-right">
-                  <p className="font-semibold text-red-400">-${parseFloat(expense.amount).toFixed(2)}</p>
+                  <p className="font-semibold text-red-400">-?{parseFloat(expense.amount).toFixed(2)}</p>
                   <p className="text-xs text-muted-foreground">{expense.date}</p>
                 </div>
               </div>

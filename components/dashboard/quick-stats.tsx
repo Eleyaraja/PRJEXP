@@ -53,13 +53,13 @@ export default function QuickStats({ userId }: QuickStatsProps) {
   const statItems = [
     {
       label: 'Total Expenses',
-      value: `$${stats.totalExpenses.toFixed(2)}`,
+      value: `??{stats.totalExpenses.toFixed(2)}`,
       icon: TrendingDown,
       color: 'text-red-400',
     },
     {
       label: 'Total Balance',
-      value: `$${stats.totalBalance.toFixed(2)}`,
+      value: `??{stats.totalBalance.toFixed(2)}`,
       icon: Wallet,
       color: 'text-green-400',
     },
@@ -85,7 +85,7 @@ export default function QuickStats({ userId }: QuickStatsProps) {
           <Card key={stat.label} className="bg-card border-border">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">{stat.label}</CardTitle>
-              <Icon className={`h-4 w-4 ${stat.color}`} />
+              <Icon className={`h-4 w-4 ?{stat.color}`} />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-foreground">{stat.value}</div>

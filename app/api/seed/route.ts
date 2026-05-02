@@ -19,16 +19,16 @@ export async function POST() {
   try {
     // ── 1. Profile ───────────────────────────────────────────────────────────
     const { error: profileErr } = await supabase.from('profiles').upsert({
-      id: userId, first_name: 'Alex', last_name: 'Morgan', currency: 'USD',
+      id: userId, first_name: 'Alex', last_name: 'Morgan', currency: 'INR',
     })
     log.push(profileErr ? `profile ERROR: ${profileErr.message}` : 'profile: ok')
 
     // ── 2. Accounts — upsert all 4 by name ──────────────────────────────────
     const accountDefs = [
-      { name: 'Chase Checking', type: 'bank',           currency: 'USD', balance: 4250.00, is_default: true  },
-      { name: 'Visa Credit',    type: 'credit_card',    currency: 'USD', balance: 1800.00, is_default: false },
-      { name: 'Cash Wallet',    type: 'cash',           currency: 'USD', balance: 320.00,  is_default: false },
-      { name: 'PayPal',         type: 'digital_wallet', currency: 'USD', balance: 540.00,  is_default: false },
+      { name: 'Chase Checking', type: 'bank',           currency: 'INR', balance: 4250.00, is_default: true  },
+      { name: 'Visa Credit',    type: 'credit_card',    currency: 'INR', balance: 1800.00, is_default: false },
+      { name: 'Cash Wallet',    type: 'cash',           currency: 'INR', balance: 320.00,  is_default: false },
+      { name: 'PayPal',         type: 'digital_wallet', currency: 'INR', balance: 540.00,  is_default: false },
     ]
 
     // Fetch existing accounts

@@ -90,10 +90,10 @@ export default function ProfileSettings({ userId }: ProfileSettingsProps) {
           </Label>
           <Input
             id="currency"
-            value={profile?.currency || 'USD'}
+            value={profile?.currency || 'INR'}
             onChange={(e) => setProfile({ ...profile, currency: e.target.value })}
             className="bg-secondary border-border text-foreground"
-            placeholder="USD"
+            placeholder="INR"
           />
         </div>
 

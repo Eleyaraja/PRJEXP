@@ -22,7 +22,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
           <div key={p.name} className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full" style={{ backgroundColor: p.color }} />
             <span className="text-xs text-muted-foreground">{p.name}:</span>
-            <span className="text-sm font-bold" style={{ color: p.color }}>${p.value.toFixed(2)}</span>
+            <span className="text-sm font-bold" style={{ color: p.color }}>?{p.value.toFixed(2)}</span>
           </div>
         ))}
       </div>
@@ -122,7 +122,7 @@ export default function TrendingChart({ userId, timeRange }: TrendingChartProps)
               <YAxis
                 stroke="rgba(255,255,255,0.4)"
                 tick={{ fill: 'rgba(255,255,255,0.6)', fontSize: 11 }}
-                tickFormatter={(v) => `$${v >= 1000 ? (v / 1000).toFixed(1) + 'k' : v}`}
+                tickFormatter={(v) => `??{v >= 1000 ? (v / 1000).toFixed(1) + 'k' : v}`}
               />
               <Tooltip content={<CustomTooltip />} />
               <Legend

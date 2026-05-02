@@ -21,7 +21,7 @@ const CustomTooltip = ({ active, payload }: any) => {
       <div className="bg-card border border-border rounded-lg px-4 py-3 shadow-xl">
         <p className="text-sm font-semibold text-foreground">{payload[0].payload.name}</p>
         <p className="text-lg font-bold mt-1" style={{ color: payload[0].fill }}>
-          ${payload[0].value.toFixed(2)}
+          ?{payload[0].value.toFixed(2)}
         </p>
       </div>
     )
@@ -104,17 +104,17 @@ export default function CategoryBreakdown({ userId, timeRange }: CategoryBreakdo
               <YAxis
                 stroke="rgba(255,255,255,0.4)"
                 tick={{ fill: 'rgba(255,255,255,0.6)', fontSize: 11 }}
-                tickFormatter={(v) => `$${v}`}
+                tickFormatter={(v) => `??{v}`}
               />
               <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255,255,255,0.04)' }} />
               <Bar dataKey="amount" radius={[6, 6, 0, 0]} maxBarSize={52}>
                 {data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
+                  <Cell key={`cell-?{index}`} fill={entry.color} />
                 ))}
                 <LabelList
                   dataKey="amount"
                   position="top"
-                  formatter={(v: number) => `$${v >= 1000 ? (v / 1000).toFixed(1) + 'k' : v}`}
+                  formatter={(v: number) => `??{v >= 1000 ? (v / 1000).toFixed(1) + 'k' : v}`}
                   style={{ fill: 'rgba(255,255,255,0.7)', fontSize: 10 }}
                 />
               </Bar>
