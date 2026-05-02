@@ -19,7 +19,7 @@ const CustomTooltip = ({ active, payload }: any) => {
       <div className="bg-card border border-border rounded-lg px-4 py-3 shadow-xl">
         <p className="text-sm font-semibold text-foreground">{payload[0].name}</p>
         <p className="text-lg font-bold mt-1" style={{ color: payload[0].payload.fill }}>
-          ?{payload[0].value.toFixed(2)}
+          ₹{payload[0].value.toFixed(2)}
         </p>
         <p className="text-xs text-muted-foreground">{pct}% of total</p>
       </div>
@@ -36,7 +36,7 @@ const renderCustomLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent
   const y = cy + radius * Math.sin(-midAngle * RADIAN)
   return (
     <text x={x} y={y} fill="white" textAnchor="middle" dominantBaseline="central" fontSize={11} fontWeight={600}>
-      {`?{(percent * 100).toFixed(0)}%`}
+      {`${(percent * 100).toFixed(0)}%`}
     </text>
   )
 }
@@ -115,7 +115,7 @@ export default function SpendingChart({ userId }: SpendingChartProps) {
               >
                 {data.map((entry, index) => (
                   <Cell
-                    key={`cell-?{index}`}
+                    key={`cell-${index}`}
                     fill={entry.fill}
                     stroke="rgba(0,0,0,0.2)"
                     strokeWidth={1}

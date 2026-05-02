@@ -73,13 +73,13 @@ export default function AnalyticsSummary({ userId, timeRange }: AnalyticsSummary
   const summaryItems = [
     {
       label: 'Total Spent',
-      value: `??{stats.totalSpent}`,
+      value: `₹${stats.totalSpent}`,
       icon: DollarSign,
       color: 'text-red-400',
     },
     {
       label: 'Average Daily',
-      value: `??{stats.avgDaily}`,
+      value: `₹${stats.avgDaily}`,
       icon: TrendingUp,
       color: 'text-orange-400',
     },
@@ -91,7 +91,7 @@ export default function AnalyticsSummary({ userId, timeRange }: AnalyticsSummary
     },
     {
       label: 'Category Total',
-      value: `??{stats.highestAmount}`,
+      value: `₹${stats.highestAmount}`,
       icon: DollarSign,
       color: 'text-cyan-400',
     },

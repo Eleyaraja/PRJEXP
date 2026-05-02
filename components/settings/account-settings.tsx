@@ -128,7 +128,7 @@ export default function AccountSettings({ userId }: AccountSettingsProps) {
           <Card className="bg-gradient-to-br from-primary/20 to-primary/5 border-primary/30 sm:col-span-1">
             <CardContent className="pt-5 pb-4">
               <p className="text-xs text-muted-foreground uppercase tracking-wider">Total Balance</p>
-              <p className="text-2xl font-bold text-foreground mt-1">?{totalBalance.toFixed(2)}</p>
+              <p className="text-2xl font-bold text-foreground mt-1">₹{totalBalance.toFixed(2)}</p>
               <p className="text-xs text-muted-foreground mt-1">{accounts.length} account{accounts.length !== 1 ? 's' : ''}</p>
             </CardContent>
           </Card>
@@ -138,10 +138,10 @@ export default function AccountSettings({ userId }: AccountSettingsProps) {
               <Card key={acc.id} className="bg-card border-border">
                 <CardContent className="pt-5 pb-4">
                   <div className="flex items-center gap-2 mb-1">
-                    <Icon className={`h-3.5 w-3.5 ?{TYPE_COLORS[acc.type] || 'text-muted-foreground'}`} />
+                    <Icon className={`h-3.5 w-3.5 ${TYPE_COLORS[acc.type] || 'text-muted-foreground'}`} />
                     <p className="text-xs text-muted-foreground truncate">{acc.name}</p>
                   </div>
-                  <p className="text-xl font-bold text-foreground">?{parseFloat(acc.balance || 0).toFixed(2)}</p>
+                  <p className="text-xl font-bold text-foreground">₹{parseFloat(acc.balance || 0).toFixed(2)}</p>
                 </CardContent>
               </Card>
             )
@@ -235,7 +235,7 @@ export default function AccountSettings({ userId }: AccountSettingsProps) {
                     {/* Icon + name + badges */}
                     <div className="flex items-center gap-3 min-w-0">
                       <div className={`p-2 rounded-lg bg-background/50`}>
-                        <Icon className={`h-4 w-4 ?{TYPE_COLORS[account.type] || 'text-muted-foreground'}`} />
+                        <Icon className={`h-4 w-4 ${TYPE_COLORS[account.type] || 'text-muted-foreground'}`} />
                       </div>
                       <div className="min-w-0">
                         <p className="font-medium text-foreground truncate">{account.name}</p>
@@ -291,7 +291,7 @@ export default function AccountSettings({ userId }: AccountSettingsProps) {
                         <>
                           <div className="text-right">
                             <p className="font-semibold text-foreground">
-                              ?{parseFloat(account.balance || 0).toFixed(2)}
+                              ₹{parseFloat(account.balance || 0).toFixed(2)}
                             </p>
                             <p className="text-xs text-muted-foreground">{account.currency || 'INR'}</p>
                           </div>

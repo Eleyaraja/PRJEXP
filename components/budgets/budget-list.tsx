@@ -92,7 +92,7 @@ export default function BudgetList({ userId, isModalOpen, refreshKey }: BudgetLi
           return (
             <Card
               key={budget.id}
-              className={`bg-card border ?{
+              className={`bg-card border ${
                 isExceeded ? 'border-red-500/50' : isWarning ? 'border-yellow-500/50' : 'border-border'
               }`}
             >
@@ -117,9 +117,9 @@ export default function BudgetList({ userId, isModalOpen, refreshKey }: BudgetLi
               <CardContent className="space-y-3">
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">
-                    ?{budget.spent.toFixed(2)} / ?{parseFloat(budget.limit_amount).toFixed(2)}
+                    ₹{budget.spent.toFixed(2)} / ₹{parseFloat(budget.limit_amount).toFixed(2)}
                   </span>
-                  <span className={`font-semibold ?{
+                  <span className={`font-semibold ${
                     isExceeded ? 'text-red-400' : isWarning ? 'text-yellow-400' : 'text-green-400'
                   }`}>
                     {budget.percentage.toFixed(0)}%
@@ -127,7 +127,7 @@ export default function BudgetList({ userId, isModalOpen, refreshKey }: BudgetLi
                 </div>
                 <Progress
                   value={budget.percentage}
-                  className={`h-2 ?{
+                  className={`h-2 ${
                     isExceeded ? 'bg-red-900/30' : isWarning ? 'bg-yellow-900/30' : 'bg-green-900/30'
                   }`}
                 />

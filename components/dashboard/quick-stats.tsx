@@ -53,13 +53,13 @@ export default function QuickStats({ userId }: QuickStatsProps) {
   const statItems = [
     {
       label: 'Total Expenses',
-      value: `??{stats.totalExpenses.toFixed(2)}`,
+      value: `₹${stats.totalExpenses.toFixed(2)}`,
       icon: TrendingDown,
       color: 'text-red-400',
     },
     {
       label: 'Total Balance',
-      value: `??{stats.totalBalance.toFixed(2)}`,
+      value: `₹${stats.totalBalance.toFixed(2)}`,
       icon: Wallet,
       color: 'text-green-400',
     },
